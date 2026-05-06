@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ma premiere application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel" aria-labelledby="app-title">
+        <div class="header">
+          <div>
+            <p class="eyebrow">Premier projet</p>
+            <h1 id="app-title">Mes taches</h1>
+          </div>
+          <p class="counter" id="task-counter">0 restante</p>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="sr-only" for="task-input">Nouvelle tache</label>
+          <input id="task-input" type="text" placeholder="Ajouter une tache..." autocomplete="off" />
+          <button id="add-task-button" type="button" aria-label="Ajouter la tache">+</button>
+        </form>
+
+        <div class="filters" aria-label="Filtres">
+          <button class="active" type="button" data-filter="all">Toutes</button>
+          <button type="button" data-filter="open">A faire</button>
+          <button type="button" data-filter="done">Terminees</button>
+        </div>
+
+        <ul class="task-list" id="task-list"></ul>
+
+        <p class="empty" id="empty-state">Ajoute ta premiere tache pour commencer.</p>
+      </section>
+    </main>
+
+    <template id="task-template">
+      <li class="task-item">
+        <label>
+          <input type="checkbox" />
+          <span></span>
+        </label>
+        <button type="button" aria-label="Supprimer la tache">x</button>
+      </li>
+    </template>
+
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
